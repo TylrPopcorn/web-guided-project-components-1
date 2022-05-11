@@ -44,7 +44,7 @@ function makeImage({ imageURL }) {
 }
 imageData.forEach(imgElem => {
   const imgTag = makeImage(imgElem);
-  document.body.prepend(imgTag);
+  // document.body.prepend(imgTag);
 })
 
 
@@ -52,12 +52,20 @@ imageData.forEach(imgElem => {
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
+import panelData from "./data/panelData";
+import linkData from "./data/linkData";
+import constants from "./data/constants";
 
+const { open, close } = constants;
+/**
+ * const open = constants.open;
+ * const close = constants.close;
+ */
 
 // TASK 2- Verify our imports using log statements
-console.log() // log the panelData
-console.log() // log the open arrow
-console.log() // log the close arrow
+console.log(panelData) // log the panelData
+console.log(open) // log the open arrow
+console.log(close) // log the close arrow
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.

@@ -3,5 +3,7 @@ const close = '\u25b2'
 
 export default {
   open: open,
+  name: "Casey",
+  age: 74,
   close: close,
 }
