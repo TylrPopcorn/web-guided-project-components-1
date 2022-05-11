@@ -7,6 +7,46 @@ const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
 ]
 
+const person = {
+  name: "Casey",
+  age: 74,
+  occupation: "BEACH",
+  username: "CRHarding",
+  email: "c@c.com"
+}
+
+function makePerson({ name, age, occupation }) {
+  // const { name, age, occupation } = personObj;
+  const nameHeading = document.createElement("h1");
+  const agePara = document.createElement("p");
+  const occupationPara = document.createElement("p");
+
+  nameHeading.textContent = name;
+  agePara.textContent = age;
+  occupationPara = occupation;
+}
+
+// What is a component??? A JS function!
+
+// loop over the imageData array
+// take each object and pass it into our component one at a time
+// generate repetitive markup
+// return that markup
+// pre / append the markup to the DOM
+
+function makeImage({ imageURL }) {
+  // const imageURL = imgObj.imageURL;
+  // const { imageURL } = imgObj;
+  const image = document.createElement("img"); // <img />
+  image.src = imageURL;
+  image.style.height = "10em";
+  return image;
+}
+imageData.forEach(imgElem => {
+  const imgTag = makeImage(imgElem);
+  document.body.prepend(imgTag);
+})
+
 
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
